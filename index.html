@@ -8,7 +8,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css">
   <style>
     :root {
       --primary: #4361ee;
@@ -125,6 +124,7 @@
       transition: all 0.3s ease;
       backdrop-filter: blur(5px);
       border: 1px solid rgba(255,255,255,0.2);
+      text-decoration: none;
     }
     
     .social-link:hover {
@@ -277,10 +277,6 @@
       background: var(--primary);
       color: white;
       transform: translateY(-2px);
-    }
-    
-    .skill i {
-      font-size: 1rem;
     }
     
     /* Timeline Section */
@@ -594,7 +590,7 @@
       bottom: 70px;
       left: 0;
       width: 320px;
-      height: 420px;
+      height: 450px;
       background: white;
       border-radius: 15px;
       box-shadow: 0 10px 30px rgba(0,0,0,0.2);
@@ -638,8 +634,8 @@
     .bot-message, .user-message {
       padding: 0.6rem 0.9rem;
       border-radius: 12px;
-      max-width: 82%;
-      font-size: 0.88rem;
+      max-width: 85%;
+      font-size: 0.85rem;
       line-height: 1.4;
     }
 
@@ -655,6 +651,31 @@
       color: white;
       align-self: flex-end;
       border-bottom-right-radius: 2px;
+    }
+
+    /* Quick Questions Styling */
+    .chatbot-quick-questions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-top: 0.5rem;
+    }
+
+    .quick-btn {
+      background: white;
+      border: 1px solid var(--primary);
+      color: var(--primary);
+      padding: 0.3rem 0.6rem;
+      border-radius: 15px;
+      font-size: 0.75rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .quick-btn:hover {
+      background: var(--primary);
+      color: white;
     }
 
     .chatbot-input-area {
@@ -688,21 +709,6 @@
       justify-content: center;
     }
 
-    /* Animations */
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    
-    .fade-in {
-      animation: fadeIn 1s ease forwards;
-    }
-    
-    .delay-1 { animation-delay: 0.2s; }
-    .delay-2 { animation-delay: 0.4s; }
-    .delay-3 { animation-delay: 0.6s; }
-    .delay-4 { animation-delay: 0.8s; }
-    
     /* Responsive Design */
     @media (max-width: 992px) {
       .about-content {
@@ -731,54 +737,30 @@
     }
     
     @media (max-width: 768px) {
-      h1 {
-        font-size: 2.5rem;
-      }
-      
-      .tagline {
-        font-size: 1.2rem;
-      }
-      
-      .section-title {
-        font-size: 2rem;
-      }
-      
-      section {
-        padding: 4rem 1.5rem;
-      }
+      h1 { font-size: 2.5rem; }
+      .tagline { font-size: 1.2rem; }
+      .section-title { font-size: 2rem; }
+      section { padding: 4rem 1.5rem; }
     }
     
     @media (max-width: 576px) {
-      h1 {
-        font-size: 2rem;
-      }
-      
-      .profile-img {
-        width: 150px;
-        height: 150px;
-      }
-      
-      .footer-links {
-        flex-direction: column;
-        gap: 1rem;
-      }
-      
-      #chatbot-window {
-        width: 280px;
-        left: 0;
-      }
+      h1 { font-size: 2rem; }
+      .profile-img { width: 150px; height: 150px; }
+      .footer-links { flex-direction: column; gap: 1rem; }
+      #chatbot-window { width: 280px; left: 0; }
     }
   </style>
 </head>
 <body>
+
   <!-- Header Section -->
   <header id="home">
     <div class="header-content">
-      <img src="Musni.jpg" alt="Mohamed Musni" class="profile-img fade-in">
-      <h1 class="fade-in delay-1">Mohamed Musni</h1>
-      <p class="tagline fade-in delay-2" id="age">Aspiring Accountant </p>
+      <img src="Musni.jpg" alt="Mohamed Musni" class="profile-img">
+      <h1>Mohamed Musni</h1>
+      <p class="tagline">Aspiring Accountant</p>
       
-      <div class="social-links fade-in delay-3">
+      <div class="social-links">
         <a href="https://wa.me/94741126390" target="_blank" class="social-link whatsapp">
           <i class="fab fa-whatsapp"></i>
         </a>
@@ -788,13 +770,13 @@
         <a href="tel:+94741126390" class="social-link phone">
           <i class="fas fa-phone"></i>
         </a>
-        <a href="https://www.linkedin.com/in/mohamedmusni000/" class="social-link linkedin">
+        <a href="https://www.linkedin.com/in/mohamedmusni000/" target="_blank" class="social-link linkedin">
           <i class="fab fa-linkedin-in"></i>
         </a>
       </div>
     </div>
     
-    <a href="#about" class="scroll-down fade-in delay-4">
+    <a href="#about" class="scroll-down">
       <i class="fas fa-chevron-down"></i>
     </a>
   </header>
@@ -850,7 +832,7 @@
         </div>
         
         <div class="about-image">
-          <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1184&q=80" alt="About Mohamed">
+          <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1184&q=80" alt="About Mohamed">
         </div>
       </div>
     </div>
@@ -865,66 +847,34 @@
         <div class="skill-category">
           <h3><i class="fas fa-brain"></i> Soft Skills</h3>
           <div class="skills-list">
-            <div class="skill">
-              <i class="fas fa-comments"></i> Communication
-            </div>
-            <div class="skill">
-              <i class="fas fa-users"></i> Teamwork
-            </div>
-            <div class="skill">
-              <i class="fas fa-lightbulb"></i> Problem Solving
-            </div>
-            <div class="skill">
-              <i class="fas fa-bolt"></i> Fast Learner
-            </div>
-            <div class="skill">
-              <i class="fas fa-clock"></i> Time Management
-            </div>
-            <div class="skill">
-              <i class="fas fa-chess"></i> Strategic Thinking
-            </div>
+            <div class="skill"><i class="fas fa-comments"></i> Communication</div>
+            <div class="skill"><i class="fas fa-users"></i> Teamwork</div>
+            <div class="skill"><i class="fas fa-lightbulb"></i> Problem Solving</div>
+            <div class="skill"><i class="fas fa-bolt"></i> Fast Learner</div>
+            <div class="skill"><i class="fas fa-clock"></i> Time Management</div>
+            <div class="skill"><i class="fas fa-chess"></i> Strategic Thinking</div>
           </div>
         </div>
         
         <div class="skill-category">
           <h3><i class="fas fa-laptop-code"></i> Technical Skills</h3>
           <div class="skills-list">
-            <div class="skill">
-              <i class="fab fa-html5"></i> HTML
-            </div>
-            <div class="skill">
-              <i class="fab fa-css3-alt"></i> CSS
-            </div>
-            <div class="skill">
-              <i class="fab fa-js"></i> JavaScript (basics)
-            </div>
-            <div class="skill">
-              <i class="fab fa-python"></i> Python
-            </div>
-            <div class="skill">
-              <i class="fas fa-file-excel"></i> Excel
-            </div>
-            <div class="skill">
-              <i class="fas fa-file-word"></i> Word
-            </div>
-            <div class="skill">
-              <i class="fas fa-file-powerpoint"></i> PowerPoint
-            </div>
+            <div class="skill"><i class="fab fa-html5"></i> HTML</div>
+            <div class="skill"><i class="fab fa-css3-alt"></i> CSS</div>
+            <div class="skill"><i class="fab fa-js"></i> JavaScript (basics)</div>
+            <div class="skill"><i class="fab fa-python"></i> Python</div>
+            <div class="skill"><i class="fas fa-file-excel"></i> Excel</div>
+            <div class="skill"><i class="fas fa-file-word"></i> Word</div>
+            <div class="skill"><i class="fas fa-file-powerpoint"></i> PowerPoint</div>
           </div>
         </div>
         
         <div class="skill-category">
           <h3><i class="fas fa-language"></i> Languages</h3>
           <div class="skills-list">
-            <div class="skill">
-              <i class="fas fa-check-circle"></i> Tamil (Native)
-            </div>
-            <div class="skill">
-              <i class="fas fa-check-circle"></i> English (Fluent)
-            </div>
-            <div class="skill">
-              <i class="fas fa-check-circle"></i> Sinhala (Basic)
-            </div>
+            <div class="skill"><i class="fas fa-check-circle"></i> Tamil (Native)</div>
+            <div class="skill"><i class="fas fa-check-circle"></i> English (Fluent)</div>
+            <div class="skill"><i class="fas fa-check-circle"></i> Sinhala (Basic)</div>
           </div>
         </div>
       </div>
@@ -974,9 +924,9 @@
           <div class="timeline-dot"></div>
           <div class="timeline-content">
             <span class="timeline-date">2025 - Present</span>
-            <h3 class="timeline-title">Higher National Diploma in Accountancy (HNDA) - 2nd Year (Ongoing)</h3>
+            <h3 class="timeline-title">Higher National Diploma in Accountancy (HNDA)</h3>
             <p class="timeline-description">
-              Working towards a Higher National Diploma in Accountancy to further develop my expertise in financial management and accounting principles.
+              Currently pursuing the Higher National Diploma in Accountancy at SLIATE to further develop expertise in financial management and accounting principles.
             </p>
           </div>
         </div>
@@ -987,7 +937,7 @@
   <!-- Commerce Importance Section -->
   <section id="commerce" class="section" style="background: #f5f7ff;">
     <div class="container">
-      <h2 class="section-title">✅ Why You Should Hire Me</h2>
+      <h2 class="section-title">Why You Should Hire Me</h2>
       
       <div class="card" style="max-width: 800px; margin: 0 auto; background: white; border-radius: 15px; padding: 2.5rem; box-shadow: 0 10px 30px rgba(0,0,0,0.05);">
         <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 1.5rem;">
@@ -1109,12 +1059,12 @@
         <a href="tel:+94741126390" class="social-link phone">
           <i class="fas fa-phone"></i>
         </a>
-        <a href="https://www.linkedin.com/in/mohamedmusni000/" class="social-link linkedin">
+        <a href="https://www.linkedin.com/in/mohamedmusni000/" target="_blank" class="social-link linkedin">
           <i class="fab fa-linkedin-in"></i>
         </a>
       </div>
       
-      <p class="copyright">&copy; 2026 WebQamar. All Rights Reserved.</p>
+      <p class="copyright">&copy; 2026 Mohamed Musni. All Rights Reserved.</p>
     </div>
   </footer>
 
@@ -1130,7 +1080,15 @@
         <span id="chatbot-close-btn">&times;</span>
       </div>
       <div id="chatbot-messages">
-        <div class="bot-message">Hello! I am Mohamed Musni's virtual assistant. How can I help you today?</div>
+        <div class="bot-message">
+          Hello! I am Mohamed Musni's virtual assistant. How can I help you today?
+          <div class="chatbot-quick-questions">
+            <button class="quick-btn" onclick="handleQuickQuestion('education')">Education</button>
+            <button class="quick-btn" onclick="handleQuickQuestion('skills')">Skills</button>
+            <button class="quick-btn" onclick="handleQuickQuestion('contact')">Contact</button>
+            <button class="quick-btn" onclick="handleQuickQuestion('hire')">Why hire Musni?</button>
+          </div>
+        </div>
       </div>
       <div class="chatbot-input-area">
         <input type="text" id="chatbot-input" placeholder="Type a message...">
@@ -1144,137 +1102,93 @@
     <i class="fas fa-arrow-up"></i>
   </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+  <!-- Scripts -->
   <script>
-    // Calculate age
-    const dob = new Date('2005-12-04');
-    const now = new Date();
-    let age = now.getFullYear() - dob.getFullYear();
-    if (now.getMonth() < dob.getMonth() || (now.getMonth() === dob.getMonth() && now.getDate() < dob.getDate())) {
-      age--;
+    // Chatbot Functionality
+    const toggleBtn = document.getElementById('chatbot-toggle-btn');
+    const chatbotWindow = document.getElementById('chatbot-window');
+    const closeBtn = document.getElementById('chatbot-close-btn');
+    const sendBtn = document.getElementById('chatbot-send-btn');
+    const chatInput = document.getElementById('chatbot-input');
+    const chatMessages = document.getElementById('chatbot-messages');
+
+    toggleBtn.addEventListener('click', () => {
+      chatbotWindow.style.display = chatbotWindow.style.display === 'none' ? 'flex' : 'none';
+    });
+
+    closeBtn.addEventListener('click', () => {
+      chatbotWindow.style.display = 'none';
+    });
+
+    function addMessage(text, isUser = false) {
+      const msgDiv = document.createElement('div');
+      msgDiv.className = isUser ? 'user-message' : 'bot-message';
+      msgDiv.textContent = text;
+      chatMessages.appendChild(msgDiv);
+      chatMessages.scrollTop = chatMessages.scrollHeight;
     }
-    document.getElementById('age').innerText = `${age} Years Old • Aspiring Accountant & Developer`;
-    
-    // Scroll to top button
+
+    function getBotReply(query) {
+      const q = query.toLowerCase();
+      if (q.includes('education') || q.includes('study') || q.includes('qualify')) {
+        return "Musni is currently pursuing HNDA at SLIATE, CA Sri Lanka Business Level, and awaiting final results for AAT Sri Lanka!";
+      } else if (q.includes('skill') || q.includes('know') || q.includes('tech')) {
+        return "Musni has expertise in Accounting, Excel, HTML, CSS, JavaScript (basics), Python, and Financial Software.";
+      } else if (q.includes('contact') || q.includes('email') || q.includes('phone') || q.includes('call')) {
+        return "You can reach Musni via Email: musnimohamed0987@gmail.com or Phone/WhatsApp: +94 74 112 6390.";
+      } else if (q.includes('hire') || q.includes('why')) {
+        return "Musni combines financial accuracy with technology skills, making him a quick learner and a strong asset for modern finance teams.";
+      } else {
+        return "Thanks for reaching out! Musni will get back to you shortly.";
+      }
+    }
+
+    function sendMessage() {
+      const text = chatInput.value.trim();
+      if (!text) return;
+
+      addMessage(text, true);
+      chatInput.value = '';
+
+      setTimeout(() => {
+        const reply = getBotReply(text);
+        addMessage(reply, false);
+      }, 600);
+    }
+
+    function handleQuickQuestion(type) {
+      let userQuery = '';
+      if (type === 'education') userQuery = 'What is Musni\'s education background?';
+      else if (type === 'skills') userQuery = 'What are Musni\'s skills?';
+      else if (type === 'contact') userQuery = 'How can I contact Musni?';
+      else if (type === 'hire') userQuery = 'Why should I hire Musni?';
+
+      addMessage(userQuery, true);
+
+      setTimeout(() => {
+        const reply = getBotReply(userQuery);
+        addMessage(reply, false);
+      }, 500);
+    }
+
+    sendBtn.addEventListener('click', sendMessage);
+    chatInput.addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') sendMessage();
+    });
+
+    // Scroll to Top Button
     const scrollTopBtn = document.querySelector('.scroll-top');
-    
     window.addEventListener('scroll', () => {
-      if (window.pageYOffset > 300) {
+      if (window.scrollY > 300) {
         scrollTopBtn.classList.add('active');
       } else {
         scrollTopBtn.classList.remove('active');
       }
     });
-    
+
     scrollTopBtn.addEventListener('click', () => {
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-      });
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     });
-    
-    // Form submission
-    const contactForm = document.getElementById('contactForm');
-    
-    contactForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      
-      const name = document.getElementById('name').value;
-      const email = document.getElementById('email').value;
-      const subject = document.getElementById('subject').value;
-      const message = document.getElementById('message').value;
-      
-      alert(`Thank you, ${name}! Your message has been received. I'll get back to you soon.`);
-      contactForm.reset();
-    });
-    
-    // Smooth scrolling for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        
-        const targetId = this.getAttribute('href');
-        const targetElement = document.querySelector(targetId);
-        
-        if (targetElement) {
-          window.scrollTo({
-            top: targetElement.offsetTop - 80,
-            behavior: 'smooth'
-          });
-        }
-      });
-    });
-    
-    // Animation on scroll
-    const animateOnScroll = () => {
-      const elements = document.querySelectorAll('.fade-in:not(.animated)');
-      
-      elements.forEach(element => {
-        const elementPosition = element.getBoundingClientRect().top;
-        const windowHeight = window.innerHeight;
-        
-        if (elementPosition < windowHeight - 100) {
-          element.classList.add('animated');
-        }
-      });
-    };
-    
-    window.addEventListener('scroll', animateOnScroll);
-    window.addEventListener('load', animateOnScroll);
-
-    // Chatbot Logic
-    const chatbotToggleBtn = document.getElementById('chatbot-toggle-btn');
-    const chatbotWindow = document.getElementById('chatbot-window');
-    const chatbotCloseBtn = document.getElementById('chatbot-close-btn');
-    const chatbotSendBtn = document.getElementById('chatbot-send-btn');
-    const chatbotInput = document.getElementById('chatbot-input');
-    const chatbotMessages = document.getElementById('chatbot-messages');
-
-    chatbotToggleBtn.addEventListener('click', () => {
-      chatbotWindow.style.display = chatbotWindow.style.display === 'none' ? 'flex' : 'none';
-    });
-
-    chatbotCloseBtn.addEventListener('click', () => {
-      chatbotWindow.style.display = 'none';
-    });
-
-    function addMessage(text, sender) {
-      const msgDiv = document.createElement('div');
-      msgDiv.className = sender === 'bot' ? 'bot-message' : 'user-message';
-      msgDiv.innerText = text;
-      chatbotMessages.appendChild(msgDiv);
-      chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
-    }
-
-    chatbotSendBtn.addEventListener('click', handleUserMessage);
-    chatbotInput.addEventListener('keypress', (e) => {
-      if (e.key === 'Enter') handleUserMessage();
-    });
-
-    function handleUserMessage() {
-      const text = chatbotInput.value.trim();
-      if (!text) return;
-      
-      addMessage(text, 'user');
-      chatbotInput.value = '';
-      
-      setTimeout(() => {
-        let reply = "Thank you for reaching out! You can connect with Mohamed Musni directly via WhatsApp or Email.";
-        const lowerText = text.toLowerCase();
-        
-        if (lowerText.includes('hello') || lowerText.includes('hi') || lowerText.includes('hey')) {
-          reply = "Hello! Mohamed Musni is currently seeking finance internship opportunities in accounting and financial analysis.";
-        } else if (lowerText.includes('contact') || lowerText.includes('email') || lowerText.includes('phone') || lowerText.includes('number')) {
-          reply = "You can contact Musni at musnimohamed0987@gmail.com or call/WhatsApp at +94 74 112 6390.";
-        } else if (lowerText.includes('skill') || lowerText.includes('qualification') || lowerText.includes('education') || lowerText.includes('aat')) {
-          reply = "Musni is pursuing HNDA at SLIATE, CA Sri Lanka Business Level, and awaiting final results for AAT Sri Lanka. He is also skilled in Excel and web technologies.";
-        } else if (lowerText.includes('location') || lowerText.includes('where')) {
-          reply = "Mohamed Musni is based in Sainthamaruthu, Sri Lanka.";
-        }
-        
-        addMessage(reply, 'bot');
-      }, 500);
-    }
   </script>
 </body>
 </html>
